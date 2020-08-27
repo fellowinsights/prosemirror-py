@@ -37,18 +37,24 @@ marker = "python_version >= \"3.6\""
 name = "black"
 optional = false
 python-versions = ">=3.6"
-version = "19.10b0"
+version = "20.8b1"
 
 [package.dependencies]
 appdirs = "*"
-attrs = ">=18.1.0"
-click = ">=6.5"
+click = ">=7.1.2"
+mypy-extensions = ">=0.4.3"
 pathspec = ">=0.6,<1"
-regex = "*"
-toml = ">=0.9.4"
+regex = ">=2020.1.8"
+toml = ">=0.10.1"
 typed-ast = ">=1.4.0"
+typing-extensions = ">=3.7.4"
+
+[package.dependencies.dataclasses]
+python = "<3.7"
+version = ">=0.6"
 
 [package.extras]
+colorama = ["colorama (>=0.4.3)"]
 d = ["aiohttp (>=3.3.2)", "aiohttp-cors"]
 
 [[package]]
@@ -107,6 +113,15 @@ version = "5.1"
 
 [package.extras]
 toml = ["toml"]
+
+[[package]]
+category = "dev"
+description = "A backport of the dataclasses module for Python 3.6"
+marker = "python_version >= \"3.6\" and python_version < \"3.7\""
+name = "dataclasses"
+optional = false
+python-versions = ">=3.6, <3.7"
+version = "0.7"
 
 [[package]]
 category = "dev"
@@ -438,7 +453,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "ebd9a04812615605a4f2a50fa60b2f43fc9793707e633179bb1dedeeb4de2d60"
+content-hash = "c303f7230e207ca5395c86dd4e594a70571086fc7624c089cc73ec4a01b2d0d8"
 python-versions = ">=3.6,<4"
 
 [metadata.files]
@@ -455,8 +470,8 @@ attrs = [
     {file = "attrs-19.3.0.tar.gz", hash = "sha256:f7b7ce16570fe9965acd6d30101a28f62fb4a7f9e926b3bbc9b61f8b04247e72"},
 ]
 black = [
-    {file = "black-19.10b0-py36-none-any.whl", hash = "sha256:1b30e59be925fafc1ee4565e5e08abef6b03fe455102883820fe5ee2e4734e0b"},
-    {file = "black-19.10b0.tar.gz", hash = "sha256:c2edb73a08e9e0e6f65a0e6af18b059b8b1cdd5bef997d7a0b181df93dc81539"},
+    {file = "black-20.8b1-py3-none-any.whl", hash = "sha256:70b62ef1527c950db59062cda342ea224d772abdf6adc58b86a45421bab20a6b"},
+    {file = "black-20.8b1.tar.gz", hash = "sha256:1c02557aa099101b9d21496f8a914e9ed2222ef70336404eeeac8edba836fbea"},
 ]
 certifi = [
     {file = "certifi-2020.4.5.1-py2.py3-none-any.whl", hash = "sha256:1d987a998c75633c40847cc966fcf5904906c920a7f17ef374f5aa4282abd304"},
@@ -511,6 +526,10 @@ coverage = [
     {file = "coverage-5.1-cp39-cp39-win32.whl", hash = "sha256:a82b92b04a23d3c8a581fc049228bafde988abacba397d57ce95fe95e0338ab4"},
     {file = "coverage-5.1-cp39-cp39-win_amd64.whl", hash = "sha256:bb28a7245de68bf29f6fb199545d072d1036a1917dca17a1e75bbb919e14ee8e"},
     {file = "coverage-5.1.tar.gz", hash = "sha256:f90bfc4ad18450c80b024036eaf91e4a246ae287701aaa88eaebebf150868052"},
+]
+dataclasses = [
+    {file = "dataclasses-0.7-py3-none-any.whl", hash = "sha256:3459118f7ede7c8bea0fe795bff7c6c2ce287d01dd226202f7c9ebc0610a7836"},
+    {file = "dataclasses-0.7.tar.gz", hash = "sha256:494a6dcae3b8bcf80848eea2ef64c0cc5cd307ffc263e17cdf42f3e5420808e6"},
 ]
 flake8 = [
     {file = "flake8-3.8.2-py2.py3-none-any.whl", hash = "sha256:ccaa799ef9893cebe69fdfefed76865aeaefbb94cb8545617b2298786a4de9a5"},
@@ -627,6 +646,7 @@ regex = [
     {file = "regex-2020.5.14.tar.gz", hash = "sha256:ce450ffbfec93821ab1fea94779a8440e10cf63819be6e176eb1973a6017aff5"},
 ]
 requests = [
+    {file = "requests-2.23.0-py2.7.egg", hash = "sha256:5d2d0ffbb515f39417009a46c14256291061ac01ba8f875b90cad137de83beb4"},
     {file = "requests-2.23.0-py2.py3-none-any.whl", hash = "sha256:43999036bfa82904b6af1d99e4882b560e5e2c68e5c4b0aa03b655f3d7d73fee"},
     {file = "requests-2.23.0.tar.gz", hash = "sha256:b3f43d496c6daba4493e7c431722aeb7dbc6288f52a6e04e7b6023b0247817e6"},
 ]
